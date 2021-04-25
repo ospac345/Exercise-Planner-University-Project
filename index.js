@@ -8,6 +8,7 @@ const passport = require('passport');
 const session = require('express-session');
 
 
+
 app.engine('mustache', mustache());
 app.set('view engine', 'mustache');
 
@@ -18,6 +19,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 auth.init(app);
 app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(session({ secret: 'dont tell anyone', resave: false, saveUninitialized: false }));
 

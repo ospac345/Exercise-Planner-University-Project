@@ -7,6 +7,10 @@ module.exports= router;
 
 router.get("/", controller.show_landing_page);
 
+router.get("/home", controller.show_home_page);
+
+router.get("/logout", controller.logout);
+
 router.post("/register", controller.post_register);
 
 router.post("/login", auth.authorize("/"),

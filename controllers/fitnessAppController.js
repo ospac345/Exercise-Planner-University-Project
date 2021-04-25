@@ -6,6 +6,11 @@ exports.show_landing_page = function(req, res) {
     res.render('users/landingPage');
  };
 
+ // example scnario
+ exports.show_home_page = function(req, res) {
+    res.render('fitnessApp/schedule');
+ };
+
  exports.post_register = function(req, res) {
     const user = req.body.username;
     const password = req.body.registerPassword;
@@ -28,4 +33,10 @@ return; }
 exports.post_login = function(req, res) {
     console.log('post_login successful');
     res.redirect('/home');
+};
+
+
+exports.logout = function(req, res) {
+    req.logout();
+    res.redirect("/");
 };

@@ -36,7 +36,10 @@ if (!user) {
             if (err) { return cb(err); }
             cb(null, user);
         });
-}); };
+});
+app.use(passport.initialize());
+app.use(passport.session());
+};
 exports.authorize = function(redirect) {
     return passport.authenticate('local', 
     { failureRedirect: redirect });
