@@ -1,28 +1,3 @@
-// $(function() {
-//     getCalendars();
-//     initializeCalendar();
-    
-//   });
-
-//   var getCalendars = function() {
-//     $cal = $('.cal');
-//   }  
-//      /* --------------------------initialize calendar-------------------------- */
-//      var initializeCalendar = function() {
-//         $('.cal').fullCalendar({
-//             editable: true,
-//             eventLimit: true, // allow "more" link when too many events
-//             // create events
-//             defaultTimedEventDuration: '00:30:00',
-//             forceEventDuration: true,
-//             eventBackgroundColor: '#337ab7',
-//             editable: false,
-//             height: screen.height - 160,
-//             timezone: 'America/Chicago',
-//           });
-//       }
-  
-
 document.addEventListener('DOMContentLoaded', function() {
 
     var calendarEl = document.getElementById('calendar');
@@ -31,8 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
       editable: true,
       selectable: true,
       timeZone: 'local',
+      themeSystem: 'bootstrap',
       select: function(start, end) {
         newEvent(start);
+        date(start);  
     }    
     });
 
@@ -46,8 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
         var startDate = start.start;
         var endCal = moment(start.start).add($('#duration-select').children("option:selected").val(), 'minutes'); 
         var endDate = endCal._d;
-        console.log(startDate);
-        console.log(endDate);
         if (title) {
           var eventData = {
               title: title,
@@ -66,18 +41,19 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       calendar.render();
 
-    $(function() {
+    var date = function datePicker(start) {
         $('input[name="datetimes"]').daterangepicker({
+          startDate: moment(start.start).format("DD/MM/YYYY HH:mm"),
           singleDatePicker: true,
           timePicker: true,
           showDropdowns: true,
           locale: {
-              format: 'DD/MM hh:mm A',
+              format: 'DD/MM/YYYY HH:mm',
               separator : " - ",
               weekLabel: "W",
             }
         })
-      });
+      };
       
       
   });
