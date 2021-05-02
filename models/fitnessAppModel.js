@@ -34,12 +34,12 @@ class FitnessApp {
     }
 
 
-    addActivity(username,title, startDate, duration, completed){
+    addActivity(user,title, start, end, completed){
         var activityEntry = {
-        username: username,
+        user: user,
         title: title,
-        startDate: startDate,
-        duration: duration,
+        start: start,
+        end: end,
         completed: completed
     }
     console.log('schedule entry adding', activityEntry);
@@ -53,7 +53,7 @@ class FitnessApp {
 
     getActivitiesByUser(user) {
         return new Promise((resolve, reject) => {
-            this.db.find({ 'username': user }, function(err, entries) {
+            this.db.find({ 'user': user }, function(err, entries) {
                 if (err) {
                     reject(err);
                 } else {
@@ -64,11 +64,29 @@ class FitnessApp {
     }
 
 
+    removeActivity(id) {
+            this.db.remove({_id: id}, function(err, entries) {
+                if (err) {
+                    reject(err);
+                } else {
+                    
+                }
+            });
+        }
+
+    
+    updateActivity(id, newTitle, newStart, newEnd) {
+        this.db.update({_id: id }, { $set: { title: newTitle, start: newStart, end: newEnd } }, function (err, numReplaced) {
+            console.log("replaced---->" + numReplaced);
+          });
+    }
 
 
-
-
-
+    completeActivity(id) {
+        this.db.update({_id: id }, { $set: { completed: "true" } }, function (err, numReplaced) {
+            console.log("replaced---->" + numReplaced);
+          });
+    }
 
 
 }

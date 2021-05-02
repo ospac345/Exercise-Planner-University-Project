@@ -10,6 +10,8 @@ router.get("/", controller.show_landing_page);
 
 router.get("/:user", controller.show_home_page);
 
+router.get("/:user/achievements", controller.show_achievements);
+
 router.get("/logout", controller.logout);
 
 router.post("/register", controller.post_register);
@@ -17,7 +19,16 @@ router.post("/register", controller.post_register);
 router.post("/login", auth.authorize("/"),
 controller.post_login);
 
-router.post("/newActivity", controller.post_new_activity);
+router.post("/:user/addActivity", controller.post_new_activity);
+
+router.get("/:user/showActivities", controller.show_all_activities);
+
+router.post("/:user/removeActivity", controller.remove_activity);
+
+router.post("/:user/updateActivity", controller.update_activity)
+
+router.post("/:user/completeActivity", controller.complete_activity)
+
 
 
 

@@ -13,7 +13,7 @@ app.engine('mustache', mustache());
 app.set('view engine', 'mustache');
 
 const public = path.join(__dirname, 'public');
-app.use(express.static('public'));
+app.use(express.static(public));
 
 app.use(express.urlencoded({ extended: false }));
 
