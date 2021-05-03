@@ -4,54 +4,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/
-css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link href="styling/style.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a6fb7c7427.js" crossorigin="anonymous"></script>
   <title>Login/Register</title>
 </head>
 
 <body>
 
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">ibrox<span style="color: green">Fitness<span></a>
+  </div>
+  </nav>
+  <div class="content-body">
   <div class="form-signin">
     <form method="post" role="form" action="/login">
-      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-      <label for="username" class="visually-hidden">Username</label>
-      <input type="text" id="username" name="username" class="form-control" placeholder="Username" required
-        autofocus>
-      <label for="password" class="visually-hidden">Password</label>
-      <input type="password" id="password" name="password" class="form-control" placeholder="Password"
-        required>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-      <input class="w-100 btn btn-lg btn-primary" name="login" value="Login" type="submit" action="/login">
+      <h1 class="h3 mb-5 fw-bold text-center headings">Sign in</h1>
+
+      <input type="text" id="username" name="username" class="form-control" placeholder="&#xf406  Username" required autofocus>
+      <input type="password" id="password" name="password" class="form-control" placeholder="&#xf023  Password" required>
+      
+      <input class="btn btn-lg btn-primary btn-landing-page" name="login" value="Login" type="submit" action="/login">
     </form>
   </div>
 
   <div class="form-signup">
     <form method="post" role="form" action="/register">
-      <h1 class="h3 mb-3 fw-normal">Register</h1>
+      <h1 class="h3 mb-5 fw-bold text-center headings signup-heading">Create Account</h1>
 
-      <label for="username" class="visually-hidden">Username</label>
-      <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+      <input type="text" id="username" name="username" class="form-control" placeholder="&#xf406  Username" required autofocus>
 
-      <label for="lastName" class="visually-hidden">Last name</label>
-      <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Last name" required autofocus>
+      <input type="text" id="lastName" name="lastName" class="form-control" placeholder="&#xf2bd  Last name" required autofocus>
 
-      <label for="firstName" class="visually-hidden">First name</label>
-      <input type="text" id="firstName" name="firstName" class="form-control" placeholder="First Name" required autofocus>
-      <label for="registerEmail" class="visually-hidden">Email address</label>
-      <input type="email" id="registerEmail" name="registerEmail" class="form-control" placeholder="Email address" required autofocus>
-      <label for="registerPassword" class="visually-hidden">Password</label>
-      <input type="password" id="registerPassword" name="registerPassword" class="form-control" placeholder="Password" required>
+      <input type="text" id="firstName" name="firstName" class="form-control" placeholder="&#xf2bd  First Name" required autofocus>
+      
+      <input type="email" id="registerEmail" name="registerEmail" class="form-control" placeholder="&#xf0e0  Email address" required autofocus>
+      
+      <input type="password" id="registerPassword" name="registerPassword" class="form-control" placeholder="&#xf023  Password" required>
       <br><br>
-      <input class="w-100 btn btn-lg btn-primary" name="register" value="Register" type="submit" action="/register">
+      <input class="btn btn-lg btn-primary btn-landing-page" name="register" value="Register" type="submit" action="/register">
 
     </form>
   </div>
-
+</div>
 
 
 </body>

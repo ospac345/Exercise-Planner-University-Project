@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var username = document.getElementById('username');
+    var username = document.getElementById('username-hide');
     var user = username.textContent;
     $.ajax({ 
         type: 'GET', 
@@ -46,9 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
       );
      
       calendar.render();
-
-
-
     }
 
 });

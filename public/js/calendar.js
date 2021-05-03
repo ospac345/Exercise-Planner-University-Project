@@ -1,7 +1,7 @@
 
 
 document.addEventListener('DOMContentLoaded', function() {
- var username = document.getElementById('username');
+ var username = document.getElementById('username-hide');
  var user = username.textContent;
   console.log(user);
     $.ajax({ 
@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
               incompleteActivities.push(data[i]);
             }
       };
+      var totalActivities = document.querySelector("#total-activities");
+      console.log(incompleteActivities);
+      totalActivities.textContent = (incompleteActivities.length).toString();
 
       var calendarEl = document.getElementById('calendar');
        var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -30,19 +33,22 @@ document.addEventListener('DOMContentLoaded', function() {
             center: 'title',
             right: 'timeGridWeek,dayGridMonth,timeGridDay'
           },
+          dayHeaderContent: (args) => {
+            return moment(args.date).format('ddd D')
+        },
+          
           select: function(start, end) {
             console.log(start);
             newEvent(start);
             date(start.start);  
-        }, 
-        eventClick: function(event, jsEvent, view) {
+          }, 
+          eventClick: function(event, jsEvent, view) {
           var editStart = event.event.start;
           editEvent(event.event);
           date(editStart);
-      }    
+          }    
         });        
  
-    
         var newEvent = function(start) {
             $('input#title').val("");
             $('input#date-picker').val(moment(start.start).format("DD/MM/YYYY HH:mm"));
@@ -72,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
                  error: function(e) {
                   console.log(e);
                 },
-              });
+              },calendar.render());
               
               }
             else {
@@ -112,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 newStart: newStart,
                 newEnd: newEndFormatted
                 };
-
                 $.ajax({
                   type: 'POST',
                   url: "http://localhost:3000/"+user+"/updateActivity",
@@ -121,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
                    error: function(e) {
                     console.log(e);
                   },
-                });
+                }, calendar.render());
               } else {
               alert("Title can't be blank. Please try again.")
               }
@@ -141,8 +146,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 data: (eventId),
                  error: function(e) {
                   console.log(e);
-                },
-              });
+                }, 
+              },calendar.render());
             });
 
             $('#complete').on('click', function() {
@@ -160,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
                  error: function(e) {
                   console.log(e);
                 },
-              });
+              }, calendar.render());
             });
           }
 
