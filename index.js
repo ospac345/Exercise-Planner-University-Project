@@ -6,6 +6,7 @@ const auth = require("./auth/auth");
 const passport = require('passport');
 const session = require('express-session');
 const router = require('./routes/fitnessAppRoutes');
+const flash = require('connect-flash');
 //const bodyParser = require("body-parser");
 
 
@@ -25,7 +26,7 @@ app.use(passport.session());
 
 auth.init(app);
 
-
+app.use(flash());
 
 app.use('/', router);
 

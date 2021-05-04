@@ -5,6 +5,14 @@ html, body {
     height: 100%;
   }
 
+  .navbar-brand {
+    font-size: 1.75rem;
+    padding-left: 4%;
+  }
+  .nav-link {
+    font-size: 1.20rem;
+  }
+
   input{
     font-family: FontAwesome;
   }
@@ -95,23 +103,43 @@ html, body {
   #username-hide{
     display: none;
   }
-
-  .schedule-heading{
-    font-family: 'Krona One', sans-serif;
+  .summary-parent {
+    display: flex;
+    justify-content:space-between;
+    width: 80%;
+    border: solid 0.3px rgb(235, 232, 232);
     margin-left: 10%;
   }
+  .summary{
+    font-family: 'Krona One', sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: grid;
+  }
 
+  .add-edit-info{
+    padding-top: 10px;
+font-size: 12px;
+color: grey;
+display: block;
+  }
   .schedule-heading span{
     color: #006600;
   }
 
   #top-user{
     font-size: 12px;
+    color: rgb(29, 28, 28);
   }
 
-  #calendar{
+  #top-user:hover{
+    color: #006600 ;
+  }
+
+  #calendar, #calendar2{
     width: 80%;
     margin-left: 10%;
+    padding-bottom: 40px;
   }
 
   .fc th {
@@ -151,6 +179,7 @@ html, body {
   .fc-toolbar-title {
     font-family:monospace;
     font-weight: bold;
+    color: #009CCD;
   }
 
   .top-user-logout{
@@ -162,4 +191,20 @@ html, body {
     position: absolute;
     right: 10px;
     top: 0;
+  }
+
+  .fc-event-title {
+    font-weight: bold;
+  }
+
+  .fc th, .fc td {
+    padding: 2px;
+  }
+
+  .fc table {
+    font-size: 0.9em;
+  }
+
+  .errors {
+    color: red;
   }

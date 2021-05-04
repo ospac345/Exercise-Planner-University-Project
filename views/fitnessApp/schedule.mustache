@@ -18,16 +18,15 @@
   <script src="js/calendar.js"></script>
 
   </head>
-
 <body>
 {{#userData}}
 <div class= "top-user-logout">
 <div>
-<i class="fas fa-user-alt"></i>&nbsp;<a id="top-user" href="/{{user}}">{{firstName}} {{lastName}}</a> &nbsp;|&nbsp; <a id="top-user" href="/logout">&nbsp;Logout</a>
+<i class="fas fa-user-alt" style="color:#006600;"></i>&nbsp;<a id="top-user" href="/{{user}}">{{firstName}} {{lastName}}</a> &nbsp;|&nbsp; <a id="top-user" href="{{user}}/logout">&nbsp;Logout</a>
 </div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-<a class="navbar-brand" href="/{{user}}">ibrox<span style="color: green">Fitness<span></a>
+<a class="navbar-brand" href="/{{user}}">ibrox<span style="color: #006600;">Fitness<span></a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -42,10 +41,19 @@
 </ul>
 </div>
 </nav>
-
 <p id="username-hide">{{user}}</p>
-  <h4 class="schedule-heading">Welcome <span>{{firstName}}</span> you have <span id=total-activities></span> incomplete activities</h4>
-  {{/userData}}
+<div class="summary-parent">
+<div class=summary>
+  <h4 class="schedule-heading">Welcome&nbsp;<span>{{firstName}}</span>,</h4>
+  <h6>you have&nbsp;<span style="color: #3788d8; font-size: 26px;" id=total-activities></span>&nbsp;<i class="fas fa-hiking"></i></h6>
+  <h6>Incomplete activities</h6>
+</div>
+<div class="add-edit-info">
+<p><i class="fas fa-plus" style="font-size=16px;"></i>&nbsp;Click on time slot to add </p> 
+<p><i class="far fa-edit" style="font-size=16px;"></i>&nbsp;Click event to edit/delete</p>
+</div>
+</div>
+{{/userData}}
   
 <div class="modal fade" id="newEvent" role="dialog" aria-labelledby="eventFormLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">

@@ -2,11 +2,14 @@ const passport = require('passport');
 const Strategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 const userModel = require('../models/userModel');
+const flash = require('connect-flash');
 
 exports.init = function(app) {
     // setup password
-    passport.use(new Strategy(
-        function(username, password, cb) { // cb is callback
+    passport.use(new Strategy({
+passReqToCallback: true,
+    },
+        function(req, username, password, cb) { // cb is callback
             userModel.lookup(username, function(err, user) {
                 console.log('lookup', username);
                 if (err) {
@@ -15,7 +18,7 @@ exports.init = function(app) {
 }
 if (!user) {
                     console.log('user ', username, ' not found');
-                    return cb(null, false);
+                    return cb(null, false, req.flash('errorUsername', 'user not found'));
                 }
                 //compare provided password with stored password
                 bcrypt.compare(password, user.password,
@@ -23,7 +26,7 @@ if (!user) {
                     if (result) {
                         cb(null, user);
                     } else {
-                        cb(null, false);
+                        cb(null, false, req.flash('errorPassword', 'Incorrect Password!'));
 } });
 }); }));
     //For session handling we need serialize and deserialize users.
@@ -42,7 +45,8 @@ app.use(passport.session());
 };
 exports.authorize = function(redirect) {
     return passport.authenticate('local', 
-    { failureRedirect: redirect });
+    { failureFlash: true,
+        failureRedirect: redirect });
 };
 
 

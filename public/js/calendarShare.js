@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var username = document.getElementById('username-hide');
+    var username = document.getElementById('usern');
     var user = username.textContent;
     $.ajax({ 
         type: 'GET', 
-        url: "http://localhost:3000/"+user+"/showActivities", 
+        url: "http://localhost:3000/post/shareActivity/user=simam202", 
         dataType: 'json',
         success: function (data) { 
           var completeActivities =[];
@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
       };
 
-      var completed = document.querySelector("#completed");
-      completed.textContent = (completeActivities.length).toString();
+    //   var completed = document.querySelector("#completed");
+    //   completed.textContent = (completeActivities.length).toString();
 
-      var missed = document.querySelector("#missed");
-      missed.textContent = (incompleteActivities.length).toString();
+    //   var missed = document.querySelector("#missed");
+    //   missed.textContent = (incompleteActivities.length).toString();
 
-    var calendarEl = document.getElementById('calendar2');
+    var calendarEl = document.getElementById('calendar3');
     var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'timeGridWeek',
         editable: false,

@@ -12,9 +12,11 @@ router.get("/:user", controller.show_home_page);
 
 router.get("/:user/achievements", controller.show_achievements);
 
-router.get("/logout", controller.logout);
+router.get("/:user/logout", controller.logout);
 
 router.post("/register", controller.post_register);
+
+router.get("/register/success", controller.registrationSuccess);
 
 router.post("/login", auth.authorize("/"),
 controller.post_login);
@@ -25,11 +27,13 @@ router.get("/:user/showActivities", controller.show_all_activities);
 
 router.post("/:user/removeActivity", controller.remove_activity);
 
-router.post("/:user/updateActivity", controller.update_activity)
+router.post("/:user/updateActivity", controller.update_activity);
 
-router.post("/:user/completeActivity", controller.complete_activity)
+router.post("/:user/completeActivity", controller.complete_activity);
 
+router.get("/shareActivity/user=:user", controller.share_schedule);
 
+router.get("/post/shareActivity/user=:user", controller.show_share_activities);
 
 
 router.use(function(req, res) {

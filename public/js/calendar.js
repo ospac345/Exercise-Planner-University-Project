@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
       };
       var totalActivities = document.querySelector("#total-activities");
-      console.log(incompleteActivities);
       totalActivities.textContent = (incompleteActivities.length).toString();
 
       var calendarEl = document.getElementById('calendar');
@@ -46,7 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
           var editStart = event.event.start;
           editEvent(event.event);
           date(editStart);
-          }    
+          },
+          
         });        
  
         var newEvent = function(start) {
@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
                   end: endDate,
                   allDay: false
               };
-              console.log(eventData);
               calendar.addEvent(eventData);
               $('#newEvent').modal('hide');
 
@@ -168,7 +167,6 @@ document.addEventListener('DOMContentLoaded', function() {
               }, calendar.render());
             });
           }
-
           calendar.render();
     
         var date = function datePicker(start) {

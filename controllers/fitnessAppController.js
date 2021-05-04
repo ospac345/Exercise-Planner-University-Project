@@ -2,11 +2,21 @@ const { response } = require('express');
 const userDao = require('../models/userModel.js');
 const fitnessAppDAO= require('../models/fitnessAppModel.js')
 const db = new fitnessAppDAO('../activities.db');
+const url = require('url');
+const http = require('http');
+const queryString = require('query-string');
 
 
 exports.show_landing_page = function(req, res) {
-    res.render("users/landingPage")
+    const errors = req.flash() || [];
+    console.log(errors);
+    res.render("users/landingPage", {errors})
  };
+
+ exports.post_login = function(req, res) {
+    let user = req.user.user;
+    res.redirect('/'+user);
+};
 
  exports.post_register = function(req, res) {
     const user = req.body.username;
@@ -14,17 +24,22 @@ exports.show_landing_page = function(req, res) {
     const lName = req.body.lastName;
     const fName = req.body.firstName;
     const email = req.body.registerEmail;
-    //console.log("register user", user, "password",  password);
+    
     if (!user || !password) {
         res.send(401, 'no user or no password');
 return; }
     userDao.lookup(user, function(err, u) {
         if (u) {
             res.send(401, "User exists:", user);
-return; }
+            //console.log("User Exist", user, req.flash('errorUserExist', 'user already exist'));
+return;}
         userDao.create(user, password,lName, fName, email);
-        res.redirect('/login');
+        res.redirect('/register/success');
     });
+}
+
+exports.registrationSuccess= function(req, res) {
+    res.render("users/success");
 }
 
 
@@ -41,13 +56,6 @@ exports.post_new_activity = function(req, res) {
     res.redirect('/'+user);
 }
  
-exports.post_login = function(req, res) {
-    let user = req.user.user;
-    console.log('post_login successful');
-    res.redirect('/'+user);
-};
- 
-
 // Retrieve All Activities
 exports.show_all_activities = function(req, res) {
     let user = req.user.user;
@@ -107,3 +115,28 @@ exports.complete_activity = function(req, res) {
     var id = req.body.id;
     db.completeActivity(id);
 }
+
+exports.share_schedule = function(req,res) {
+    // let user = req.params.user;
+    // console.log(req.query);
+    console.log(req.url);
+    const parsed = queryString.parse(req.url);
+    console.log(parsed);
+    res.render("fitnessApp/share", {
+        "userData": "simam202"
+        })
+    
+}
+
+exports.show_share_activities = function(req, res) {
+    //let user = req.user.user;
+    db.getActivitiesByUser("simam202")
+    .then((entries) => {
+       // console.log(entries);
+        res.json(entries);
+    })
+    .catch((err) => {
+        console.log('Error: ')
+        console.log(JSON.stringify(err))
+    });
+ };

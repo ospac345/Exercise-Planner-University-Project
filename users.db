@@ -1,1 +1,5 @@
+{"user":"john","password":"$2b$10$nUkQtlHFITQib1OPlg89K.9lfd/jVfVI1OpXaT4pZsEdpVW0Jw.VO","lastName":"Lewis","firstName":"Martin","email":"martin@lewis.com","_id":"SA6nYmEH2DCDuURt"}
+{"user":"test","password":"$2b$10$5y3zGiiMl3T3UpfrtW/SceNY2WJ1n5wYWdGqRpcDQ6vzaqSDPeIz.","lastName":"test","firstName":"test","email":"test@test","_id":"eykEQ0I70EDh7MIn"}
 {"user":"simam202","password":"$2b$10$WoMgDD5k8jB5Z0KiMDcmjeBiEAex/x69Jovg/mxKViYO7KVBlJWGW","lastName":"Imam","firstName":"Syed","email":"syed@syed.com","_id":"lp9VLoNZ5Wn5IDqX"}
+{"user":"test1","password":"$2b$10$3KFb3aHbZ0rQ6BKa0wJh6./libJOrEGEueG60El9YBaRRs.eMUpfa","lastName":"test1","firstName":"test1","email":"test@test","_id":"rfEK0XKxIwqbRXP0"}
+{"user":"test2","password":"$2b$10$bJqyukmmo30ydQHxDGnmh.F.dv9OP.iLHSpWTJmHumJaCxdWO/EWW","lastName":"test2","firstName":"test2","email":"test2@test","_id":"wHw60QPXEtc3itna"}
