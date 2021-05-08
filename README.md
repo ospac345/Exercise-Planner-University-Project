@@ -16,4 +16,4 @@ nodemon index
 
 The login and Register page is the ibroxFitness landing page. New users can register with their information, while returning users can simply login.
 
-![img](/Users/syed/Desktop/WD2-CW2/public/images/Login.png);
+![img](https://raw.github.com/ospac345/WD2-CW2/blob/main/public/images/Login.png);
