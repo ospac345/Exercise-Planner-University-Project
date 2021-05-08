@@ -30,7 +30,7 @@ exports.show_landing_page = function(req, res) {
 return; }
     userDao.lookup(user, function(err, u) {
         if (u) {
-            req.flash('errorUserExist', 'user already exist');
+            req.flash('errorUserExist', 'User Already Exists');
             res.redirect('/');
 return;
 }

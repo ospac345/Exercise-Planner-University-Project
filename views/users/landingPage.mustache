@@ -24,15 +24,16 @@
   <div class="form-signin">
     <form method="post" role="form" action="/login">
       <h1 class="h3 mb-5 fw-bold text-center headings">Sign in</h1>
-
-      <input type="text" id="username" name="username" class="form-control" placeholder="&#xf406  Username" required autofocus>
-      {{#errors}}
+{{#errors}}
        <p class="errors">{{ errorUsername }}</p>
        {{/errors}}
-      <input type="password" id="password" name="password" class="form-control" placeholder="&#xf023  Password" required>
-       {{#errors}}
+{{#errors}}
        <p class="errors">{{ errorPassword }}</p>
        {{/errors}}
+      <input type="text" id="username" name="username" class="form-control" placeholder="&#xf406  Username" required autofocus>
+      
+      <input type="password" id="password" name="password" class="form-control" placeholder="&#xf023  Password" required>
+      
 
       <input class="btn btn-lg btn-primary btn-landing-page" name="login" value="Login" type="submit" action="/login">
     </form>
