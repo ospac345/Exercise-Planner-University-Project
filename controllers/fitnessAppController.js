@@ -4,7 +4,7 @@ const fitnessAppDAO= require('../models/fitnessAppModel.js')
 const db = new fitnessAppDAO('../activities.db');
 const url = require('url');
 const http = require('http');
-const queryString = require('query-string');
+const flash = require('connect-flash');
 
 
 exports.show_landing_page = function(req, res) {
@@ -30,15 +30,16 @@ exports.show_landing_page = function(req, res) {
 return; }
     userDao.lookup(user, function(err, u) {
         if (u) {
-            res.send(401, "User exists:", user);
-            //console.log("User Exist", user, req.flash('errorUserExist', 'user already exist'));
-return;}
+            req.flash('errorUserExist', 'user already exist');
+            res.redirect('/');
+return;
+}
         userDao.create(user, password,lName, fName, email);
         res.redirect('/register/success');
     });
 }
 
-exports.registrationSuccess= function(req, res) {
+exports.registration_success= function(req, res) {
     res.render("users/success");
 }
 
@@ -95,7 +96,6 @@ exports.show_achievements = function(req, res) {
 
  exports.remove_activity = function(req,res) {
    var id = req.body.id;
-   console.log(req.body);
 db.removeActivity(id);
  };
 
@@ -117,22 +117,18 @@ exports.complete_activity = function(req, res) {
 }
 
 exports.share_schedule = function(req,res) {
-    // let user = req.params.user;
-    // console.log(req.query);
-    console.log(req.url);
-    const parsed = queryString.parse(req.url);
-    console.log(parsed);
+    console.log(req.params.user);
+    var user = req.params.user;
     res.render("fitnessApp/share", {
-        "userData": "simam202"
-        })
-    
+        "user": user
+    })
 }
 
 exports.show_share_activities = function(req, res) {
-    //let user = req.user.user;
+    console.log(req.params.user);
+    console.log(req.params);
     db.getActivitiesByUser("simam202")
     .then((entries) => {
-       // console.log(entries);
         res.json(entries);
     })
     .catch((err) => {

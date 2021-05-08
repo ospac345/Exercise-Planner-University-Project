@@ -40,12 +40,11 @@
   <div class="form-signup">
     <form method="post" role="form" action="/register">
       <h1 class="h3 mb-5 fw-bold text-center headings signup-heading">Create Account</h1>
-
-      <input type="text" id="username" name="username" class="form-control" placeholder="&#xf406  Username" required autofocus>
       {{#errors}}
        <p class="errors">{{ errorUserExist }}</p>
        {{/errors}}
-
+      <input type="text" id="username" name="username" class="form-control" placeholder="&#xf406  Username" required autofocus>
+      
       <input type="text" id="lastName" name="lastName" class="form-control" placeholder="&#xf2bd  Last name" required autofocus>
 
       <input type="text" id="firstName" name="firstName" class="form-control" placeholder="&#xf2bd  First Name" required autofocus>

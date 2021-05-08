@@ -1,14 +1,18 @@
 {"user":"simam202","title":"Cricket","start":"2021-05-02T07:00:00+01:00","end":"2021-05-02T08:00:00+01:00","completed":"true","_id":"28ScnXnRdFPFWcUw"}
 {"user":"simam202","title":"Push ups","start":"2021-05-03T11:30:00+01:00","end":"2021-05-03T13:00:00+01:00","completed":"false","_id":"4FivESmEuAxJCkeg"}
-{"user":"simam202","title":"Run","start":"2021-05-06T11:00:00+01:00","end":"2021-05-06T12:30:00+01:00","completed":"false","_id":"896KMnd6JjFly9Ua"}
+{"user":"simam202","title":"Run updated","start":"2021-05-06T11:00:00+01:00","end":"2021-05-06T11:30:00+01:00","completed":"true","_id":"896KMnd6JjFly9Ua"}
 {"user":"simam202","title":"Football","start":"2021-05-07T07:00:00+01:00","end":"2021-05-07T07:30:00+01:00","completed":"false","_id":"9rVTsCYMK0nLxgdL"}
-{"user":"simam202","title":"Walk","start":"2021-05-04T08:00:00+01:00","end":"2021-05-04T09:00:00+01:00","completed":"false","_id":"K3l0iwZDljXl7fHc"}
+{"user":"simam202","title":"New Running","start":"2021-05-04T10:00:00+01:00","end":"2021-05-04T15:00:00+01:00","completed":"false","_id":"FGmwvGsUrJ8Tab3k"}
+{"user":"simam202","title":"Walk","start":"2021-05-04T08:00:00+01:00","end":"2021-05-04T09:00:00+01:00","completed":"true","_id":"K3l0iwZDljXl7fHc"}
 {"user":"simam202","title":"Gym","start":"2021-04-27T11:30:00+01:00","end":"2021-04-27T13:00:00+01:00","completed":"true","_id":"Kisk3PU9Dbvfu5I0"}
 {"user":"simam202","title":"New Test Test","start":"2021-04-30T11:30:00+01:00","end":"2021-04-30T13:30:00+01:00","completed":"false","_id":"PqZlRh6i2IMIwJ9a"}
 {"user":"simam202","completed":"false","_id":"YD0yzMaivcSaget1"}
+{"user":"simam202","title":"Football","start":"2021-05-02T08:30:00+01:00","end":"2021-05-02T09:00:00+01:00","completed":"false","_id":"Yq8bXEdluUZPbTWm"}
+{"user":"simam202","title":"Walking Test ","start":"2021-05-05T03:00:00+01:00","end":"2021-05-05T04:30:00+01:00","completed":"false","_id":"ZDTURrEaSDTyx9S0"}
 {"user":"simam202","title":"Test n345","start":"2021-05-04T08:00:00+01:00","end":"2021-05-04T09:00:00+01:00","completed":"true","_id":"ZT3CvEtWpjcYiojh"}
 {"user":"simam202","title":"Jogging","start":"2021-04-26T12:00:00+01:00","end":"2021-04-26T13:30:00+01:00","completed":"false","_id":"h87Qpa7UO00ANcYl"}
 {"user":"simam202","title":"Lunges","start":"2021-04-30T06:30:00+01:00","end":"2021-04-30T07:00:00+01:00","completed":"false","_id":"lGyhndns5cQ69Nrf"}
+{"user":"simam202","title":"Walk","start":"2021-05-06T11:00:00+01:00","end":"2021-05-06T16:00:00+01:00","completed":"false","_id":"mkLmSIcBedffy4BG"}
 {"user":"simam202","title":"New Test","start":"2021-05-05T07:30:00+01:00","end":"2021-05-05T08:30:00+01:00","completed":"false","_id":"oKydOAGwtmls0Ixq"}
 {"user":"simam202","title":"Lunges","start":"2021-05-04T15:30:00+01:00","end":"2021-05-04T17:00:00+01:00","completed":"false","_id":"qw2lrdbPLxzOC6Ds"}
 {"user":"simam202","title":"Running updated","start":"2021-04-28T08:30:00+01:00","end":"2021-04-28T09:30:00+01:00","completed":"false","_id":"vo7XH2RVOQJwCRRo"}

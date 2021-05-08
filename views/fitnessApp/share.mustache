@@ -15,11 +15,20 @@
   <script src="../js/calendarShare.js"></script>
   </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="/{{user}}">ibrox<span style="color: #006600;">Fitness<span></a>
+</nav>
+{{#user}}
+<h2 style="display:none;" id="usern">{{user}}</h2>
 
-{{#userData}}
-<h1 id="usern">{{user}}</h1>
-{{/userData}}
-
+<div class="summary-parent">
+<div class=summary>
+  <h4 class="schedule-heading">{{user}} shared his fitness schedule with you.</h4>
+  <h6><i class="fas fa-circle" style="color:#006600"></i>&nbsp;Complete activities</h6>
+  <h6><i class="fas fa-circle" style="color: red"></i>&nbsp;Incomplete activities</h6>
+</div>
+</div>
+{{/user}}
 <div id='calendar3' class="cal"></div>
 </body>
 

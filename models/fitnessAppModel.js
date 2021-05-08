@@ -1,7 +1,6 @@
 const Datastore = require('nedb');
 const path = require('path');
 
-
 class FitnessApp {
 
     constructor(dbFilePath) {
@@ -13,26 +12,6 @@ class FitnessApp {
             console.log('Db running in memory');
         } 
     }
-
-
-    init() {
-        this.db.insert({
-            username: 'Clifford',
-            title: 'Walking',
-            startDate: '2020-02-16' ,
-            duration: 15,
-            completed: false
-            });
-
-        this.db.insert({
-        username: 'faisal',
-        title: 'Walking',
-        startDate: '2020-02-16' ,
-        duration: 15,
-        completed: false
-        });
-    }
-
 
     addActivity(user,title, start, end, completed){
         var activityEntry = {

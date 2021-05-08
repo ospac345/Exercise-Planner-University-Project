@@ -136,7 +136,7 @@ display: block;
     color: #006600 ;
   }
 
-  #calendar, #calendar2{
+  #calendar, #calendar2, #calendar3{
     width: 80%;
     margin-left: 10%;
     padding-bottom: 40px;
@@ -207,4 +207,112 @@ display: block;
 
   .errors {
     color: red;
+  }
+
+
+  *, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    margin: 0 auto;
+    width: 300px;
+  }
+  
+  .share-container {
+    border-radius: 15px;
+    display: flex;
+    padding-right: 0;
+    text-align: center;
+    transition: width 0.5s;
+    width: 80px;
+    background-color: #eeeeee;
+  }
+  
+  .share-container.active {
+    width: 100%;
+  }
+  
+  .share-btn {
+    width: 90px;
+    padding: 5px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #777777;
+    border-radius: 15px;
+    background-color: #eeeeee;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .share-btn:hover {
+    color: #343a40;
+    cursor: pointer;
+  }
+  
+  .share-btn.active {
+    color: #ffffff;
+    background-color: #dc3545;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 5px 5px 5px 12px;
+  }
+  
+  .share-btn.active:hover {
+    background-color: #cf2838;
+  }
+  
+  .share-url {
+    width: 0;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 10px;
+    color: #eeeeee;
+    transition: all 0.2s;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+  .share-url.active {
+    width: 100%;
+    color: #343a40;
+    padding: 6px;
+  }
+  
+  /*fade*/
+  .animate {
+    opacity: 0;
+    transition: all 1s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .animate.active {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  .slide-in-down {
+    transform: translateY(-100%) translateX(-50%);
+  }
+  
+  /*notification*/
+  .notification-button {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    padding: 10px 20px;
+    background: #343a40;
+    color: #eeeeee;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 800;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.05);
   }

@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var username = document.getElementById('usern');
-    var user = username.textContent;
+     var username = document.getElementById('usern');
+     var user = username.textContent;
+     console.log(user);
     $.ajax({ 
         type: 'GET', 
-        url: "http://localhost:3000/post/shareActivity/user=simam202", 
+        url: "http://localhost:3000/retrieveActivities/user="+user+"/", 
         dataType: 'json',
         success: function (data) { 
           var completeActivities =[];
@@ -17,13 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
               completeActivities.push(data[i]);
             }
       };
-
-    //   var completed = document.querySelector("#completed");
-    //   completed.textContent = (completeActivities.length).toString();
-
-    //   var missed = document.querySelector("#missed");
-    //   missed.textContent = (incompleteActivities.length).toString();
-
+      
     var calendarEl = document.getElementById('calendar3');
     var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'timeGridWeek',
@@ -35,6 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
           left: 'prev,next',
           center: 'title',
           right: 'timeGridWeek,dayGridMonth,timeGridDay'},
+          dayHeaderContent: (args) => {
+            return moment(args.date).format('ddd D')
+        },
           eventSources:[
                     {
                         events: completeActivities,
