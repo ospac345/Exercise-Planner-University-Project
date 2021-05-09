@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require("../Controllers/fitnessAppController")
 const auth = require("../auth/auth");
-const {ensureLoggedIn} = require('connect-ensure-login');
+const ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 module.exports= router;
 
 
@@ -22,7 +22,7 @@ router.post("/register", controller.post_register);
 router.post("/login", auth.authorize("/"),
 controller.post_login);
 
-router.post("/:user/addActivity", controller.post_new_activity);
+router.post("/:user/addActivity", ensureLoggedIn('/login'), controller.post_new_activity);
 
 router.get("/:user/showActivities", controller.show_all_activities);
 
