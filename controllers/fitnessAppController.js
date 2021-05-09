@@ -9,7 +9,6 @@ const flash = require('connect-flash');
 
 exports.show_landing_page = function(req, res) {
     const errors = req.flash() || [];
-    console.log(errors);
     res.render("users/landingPage", {errors})
  };
 
@@ -46,7 +45,6 @@ exports.registration_success= function(req, res) {
 
 exports.post_new_activity = function(req, res) {
     console.log('processing post-new_entry controller');
-    console.log(req.body);
     if (!req.body.title || !req.body.start || !req.body.end) {
         res.status(400).send("Entries must have a title and date.");
         return;
@@ -106,7 +104,6 @@ exports.update_activity = function(req, res) {
     var newTitle = req.body.newTitle;
     var newStart = req.body.newStart;
     var newEnd = req.body.newEnd;
-    console.log(req.body);
     db.updateActivity(id, newTitle, newStart, newEnd);
 
 };
