@@ -67,7 +67,7 @@ Glasgow Caledonian University
 
 <hr>
 
-##Acknowledgements
+## Acknowledgements
 
 [Bootstrap](https://getbootstrap.com)
 [fullCalendar](https://fullcalendar.io)
